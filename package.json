@@ -1,7 +1,7 @@
 {
   "name": "culinary-unit-abbreviation",
   "version": "1.0.0",
-  "description": "This package converts unit or measurement terms to common abbreviations",
+  "description": "This package converts culinary unit or measurement terms to common abbreviations",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
