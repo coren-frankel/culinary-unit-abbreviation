@@ -1,6 +1,16 @@
 # culinary-unit-abbreviation
 A npm library that converts various culinary units or terms to their respective abbreviations
 
+## Attention: Work In Progress...
+
+<div align='center'>
+ <img src='https://github.com/coren-frankel/culinary-unit-abbreviation/assets/104476731/036f4fcb-2eab-49f0-8971-4fbaa75713f6' alt='work in progress sign'
+ height=250 width=250 />
+ <p>This documentation and/or it's code is incomplete at this time. Come back soon!</p>
+</div>
+
+
+
 ## Features
 
 - Convert the most common units for Height, Length, Distance, Range, Depth, Weight, Volume, Capacity, Temperature, and Speed.
