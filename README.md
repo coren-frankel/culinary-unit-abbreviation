@@ -9,13 +9,18 @@ A npm library that converts various culinary units or terms to their respective 
  <p>This documentation and/or it's code is incomplete at this time. Come back soon!</p>
 </div>
 
-
+**Next Steps**
+```bash
+$ npm publish
+```
 
 ## Features
 
 - Convert the most common units for Height, Length, Distance, Range, Depth, Weight, Volume, Capacity, Temperature, and Speed.
 - Parses and converts the plural form of the unit to its respective abbreviation if it exists in our data.
 - Passing capitalized unit returns its respective abbreviation also capitalized.
+
+
 ## Prerequisites 
 
 You need npm installed.
@@ -36,17 +41,17 @@ $ npm install culinary-unit-abbreviation
 ```js
 const abbr = require('culinary-unit-abbreviation');
 
-// Convert the unit 'kilometer' to 'km'
-abbr('kilometer');
+// Convert the unit 'package' to 'pkg'
+abbr('package');
 
-// Convert the unit 'degrees celsius' to 'C'
-abbr('degrees celsius');
+// Convert the unit 'fluid ounces' to 'fl oz'
+abbr('fluid ounces');
 
-// Convert the unit 'Kilogram' to 'Kg'
-abbr('Kilogram');
+// Convert the unit 'Milliliter' to 'mL'
+abbr('Milliliter');
 
-// Conver the unit 'meters' to 'm'
-abbr('meters');
+// Convert the unit 'pint' to 'pt'
+abbr('pint');
 ```
 
 ## Supported conversions
@@ -121,7 +126,7 @@ Want to see another term and it's abbreviation?
 [Submit an Issue](https://github.com/coren-frankel/culinary-unit-abbreviation/issues) with the term, abbreviation, and an example of the term/abbreviation as it is used in culinary arts. 
 
 ## Aknowledgments
-Dimitar Dimitrov - https://github.com/cranzy/unit-abbreviation
+Dimitar Dimitrov - https://github.com/cranzy/unit-abbreviation - boilerplate for project & README
 
 ## License
 MIT

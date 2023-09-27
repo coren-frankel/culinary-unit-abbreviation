@@ -1,7 +1,14 @@
 import abbr from '../src/index';
 
-describe('testing index file', () => {
-  test('unrecognized string should return descriptive fault string', () => {
+describe('index', () => {
+  // it('should return descriptive string when unit parameter doesn't exist as a key in object', () => {
+  //   expect(abbr('bacon').toEqual('No abbreviation found for bacon'));
+  // });
+  it('should return corresponding abbreviation', () => {
     expect(abbr('bacon').toEqual('No abbreviation found for bacon'));
+  });
+  it('should return corresponding abbreviation for multiple words, () => {
+    expect(abbr('fluid ounce').toEqual('fl oz'));
+    expect(abbr('half').toEqual('dozen'));
   });
 });

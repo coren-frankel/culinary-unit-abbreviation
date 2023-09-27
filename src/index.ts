@@ -134,14 +134,7 @@ export default function toAbbreviation(unit: string): string {
   return `No abbreviation found for ${unit}.`;
 }
 
-// module.exports = toAbbreviation;
+module.exports = toAbbreviation;
 
-// // Allow use of default import syntax in TypeScript
-// module.exports.default = toAbbreviation;
-
-// let result: string = toAbbreviation('half dozen quarts');
-// console.log(result);
-// result = toAbbreviation('fluid ounce')
-// console.log(result);
-// result = toAbbreviation('bacon')
-// console.log(result);
+// Allow use of default import syntax in TypeScript
+module.exports.default = toAbbreviation;

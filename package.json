@@ -2,9 +2,11 @@
   "name": "culinary-unit-abbreviation",
   "version": "1.0.0",
   "description": "This package converts culinary unit or measurement terms to common abbreviations",
-  "main": "index.js",
+  "main": "lib",
+  "types": "lib",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "tsc"
   },
   "keywords": [
     "unit",
