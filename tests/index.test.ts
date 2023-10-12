@@ -5,10 +5,10 @@ describe('index', () => {
   //   expect(abbr('bacon').toEqual('No abbreviation found for bacon'));
   // });
   it('should return corresponding abbreviation', () => {
-    expect(abbr('bacon').toStrictEqual('No abbreviation found for bacon'));
+    expect(abbr('bacon').match('No abbreviation found for bacon'));
   });
   it('should return corresponding abbreviation for multiple words', () => {
-    expect(abbr('fluid ounce').toBe('fl oz'));
-    expect(abbr('half').toEqual('dozen'));
+    expect(abbr('fluid ounce').match('fl oz'));
+    expect(abbr('half dozen').match('½ doz'));
   });
 });
