@@ -1,6 +1,10 @@
 
+interface Dict<T> {
+  [Key: string]: T;
+}
+
 /** Units/Terms */
-const Units = {
+const Units: Dict<string> = {
 
   // Generic/Vague/Texture or Container Specific
   bottle: 'btl',
