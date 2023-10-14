@@ -1,11 +1,10 @@
-
+/** Interface w/ Generic for custom dictionary of units */
 interface Dict<T> {
   [Key: string]: T;
 }
 
 /** Units/Terms */
 const Units: Dict<string> = {
-
   // Generic/Vague/Texture or Container Specific
   bottle: 'btl',
   bunch: 'bn',
@@ -41,6 +40,7 @@ const Units: Dict<string> = {
   stalk: 'stlk',
   stick: 'stck',
   strip: 'stp',
+  third: '⅓',
 
   // Height/Length/Depth
   centimeter: 'cm',
@@ -64,7 +64,6 @@ const Units: Dict<string> = {
   centilitre: 'cl',
   cup: 'c',
   fluid: 'fl',
-  // 'fluid ounce': 'fl oz', // handled by splitting and rejoining both words abbrevs
   gallon: 'gal',
   liter: 'l',
   litre: 'l',
@@ -112,7 +111,6 @@ function capitalFirstLetter(unit: string, abbr: string): string {
       abbr = split.join(' ');
     }
   }
-  // console.log('[capitalizeFirstLetter]: abbr = ', abbr);
   return abbr;
 }
 
