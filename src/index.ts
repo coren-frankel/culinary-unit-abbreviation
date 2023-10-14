@@ -54,6 +54,7 @@ const Units: Dict<string> = {
   milligram: 'mg',
   ounce: 'oz',
   pound: 'lb',
+  pounds: 'lbs',
 
   // Volume/Capacity
   centiliter: 'cl',
@@ -78,7 +79,7 @@ const Units: Dict<string> = {
  * @returns {string} - The converted unit to singular form
  */
 function toSingular(unit: string): string {
-  if (unit.endsWith('s')) {
+  if (unit.endsWith('s') && Units[unit.slice(0, -1)] !== undefined) {
     return unit.slice(0, -1);
   }
   return unit;
@@ -91,15 +92,17 @@ function toSingular(unit: string): string {
 * @returns {string} - First letter capitalized of the abbreviation
 */
 function capitalFirstLetter(unit: string, abbr: string): string {
-  // if (unit.split(' ').length > 0) {
-  //   let split: string[] = unit.split(' ');
-  //   for (let u in split) {
-  //     // do this here?
-  //   }
-  // }
   if (unit.charAt(0) === unit.charAt(0).toUpperCase()) {
-    return abbr.charAt(0).toUpperCase() + abbr.substring(1);
+    abbr = abbr.charAt(0).toUpperCase() + abbr.substring(1);
+    if (abbr.split(' ').length > 1) {
+      let split: string[] = abbr.split(' ');
+      for (let i = 1; i < split.length; i++) {
+        split[i] = split[i][0].toUpperCase() + split[i].substring(1);
+      }
+      abbr = split.join(' ');
+    }
   }
+  // console.log('[capitalizeFirstLetter]: abbr = ', abbr);
   return abbr;
 }
 
@@ -110,16 +113,16 @@ function capitalFirstLetter(unit: string, abbr: string): string {
 */
 function getAbbr(unit: string): string {
   let abbr: string = Units[unit.toLowerCase()];
+  let split: string[] = unit.toLowerCase().split(' ');
   if (typeof abbr === 'undefined') {
-    abbr = Units[toSingular(unit.toLowerCase())];
-  }
-  if (typeof abbr === 'undefined') {
-    if (unit.split(" ").length > 0) {
-      let split: string[] = unit.split(" ");
+    if (split.length > 1) {
+      let split: string[] = unit.toLowerCase().split(' ');
       abbr = Units[toSingular(split[0])];
       for (let i = 1; i < split.length; i++) {
-        abbr += " " + Units[toSingular(split[i])];
+        abbr += ' ' + Units[toSingular(split[i])];
       }
+    } else {
+      abbr = Units[toSingular(unit.toLowerCase())];
     }
   }
   return abbr;
@@ -132,8 +135,8 @@ function getAbbr(unit: string): string {
 */
 export default function toAbbreviation(unit: string): string {
   let abbr = getAbbr(unit);
-  if (typeof abbr !== 'undefined') {
-    return capitalFirstLetter(unit, abbr);
+  if (typeof abbr !== 'undefined' && !abbr.toLowerCase().includes('undefined')) {
+      return capitalFirstLetter(unit, abbr);
   }
   return `No abbreviation found for ${unit}.`;
 }
