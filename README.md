@@ -9,11 +9,6 @@ A npm library that converts various culinary units or terms to their respective 
  <p>This documentation and/or it's code is incomplete at this time. Come back soon!</p>
 </div>
 
-**Next Steps**
-```bash
-$ npm publish
-```
-
 ## Features
 
 - Convert the most common units for Height, Length, Distance, Range, Depth, Weight, Volume, Capacity, Temperature, and Speed.
@@ -38,8 +33,8 @@ $ npm install culinary-unit-abbreviation
 
 ## Example
 
-```js
-const abbr = require('culinary-unit-abbreviation');
+```ts
+import abbr from 'culinary-unit-abbreviation';
 
 // Convert the unit 'package' to 'pkg'
 abbr('package');
@@ -57,68 +52,64 @@ abbr('pint');
 ## Supported conversions
 
 ### Generic / Subjective
-  * bottle
-  * bunch
-  * bushel
-  * can
-  * clove
-  * dash
-  * dozen
-  * drop
+  * bottle(s)
+  * bunch(es)
+  * bushel(s)
+  * can(s)
+  * clove(s)
+  * dash(es)
+  * dozen(s)
+  * drop(s)
   * each
-  * filet
-  * handful
-  * head
+  * filet(s)
+  * handful(s)
+  * head(s)
   * half
   * large
+  * loaf/loaves
   * medium
-  * package
-  * packet
-  * peck
-  * piece
-  * pinch
+  * package(s)
+  * packet(s)
+  * peck(s)
+  * piece(s)
+  * pinch(es)
   * quarter
-  * serving
-  * sheet
-  * slice
+  * serving(s)
+  * sheet(s)
+  * slice(s)
   * small
-  * sprig
-  * stalk
-  * stick
-  * strip
-
-### Literals (no abbreviation)
-  * loaf
-  * loaves
+  * sprig(s)
+  * stalk(s)
+  * stick(s)
+  * strip(s)
 
 ### Height/Length/Depth
-  * centimeter
-  * inch
-  * inches
-  * millimeter
+  * centimeter(s)/centimetre(s)
+  * inch(es)
+  * millimeter(s)/millimetre(s)
 
 ### Weight
-  * gram
-  * kilogram
-  * microgram
-  * milligram
-  * ounce
-  * pound
+  * gram(s)
+  * kilogram(s)
+  * microgram(s)
+  * milligram(s)
+  * ounce(s)
+  * pound(s)
 
 ### Volume/Capacity
-  * centiliter
-  * cup 
-  * fluid ounce
-  * gallon
-  * liter
-  * milliliter
-  * pint
-  * quart
+  * centiliter(s)/centilitre(s)
+  * cup(s)
+  * fluid ounce(s)
+  * gallon(s)
+  * liter(s)/litre(s)
+  * milliliter(s)/millilitre(s)
+  * pint(s)
+  * quart(s)
 
 ### Spoon Size
-  * dessertspoon
-  * tablespoon
-  * teaspoon
+  * dessertspoon(s)
+  * tablespoon(s)
+  * teaspoon(s)
 
 
 ## Request An Abbreviation
@@ -126,7 +117,8 @@ Want to see another term and it's abbreviation?
 [Submit an Issue](https://github.com/coren-frankel/culinary-unit-abbreviation/issues) with the term, abbreviation, and an example of the term/abbreviation as it is used in culinary arts. 
 
 ## Aknowledgments
-Dimitar Dimitrov - https://github.com/cranzy/unit-abbreviation - boilerplate for project & README
+Dimitar Dimitrov - https://github.com/cranzy/unit-abbreviation - project & README boilerplate
+Basarat Ali Syed - That TypeScript Guy - 'TypeScript for Professionals - 2023 Edition' inspiration
 
 ## License
 MIT
