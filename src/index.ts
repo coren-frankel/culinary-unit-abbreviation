@@ -29,6 +29,7 @@ const Units: Dict<string> = {
   packet: 'pkt',
   peck: 'pk',
   piece: 'pc',
+  pieces: 'pcs',
   pinch: 'pn',
   pinches: 'pn',
   quarter: '¼',
@@ -71,11 +72,15 @@ const Units: Dict<string> = {
   millilitre: 'ml',
   pint: 'pt',
   quart: 'qt',
+  quarts: 'qts',
 
   // Spoon Size
   dessertspoon: 'dsp',
+  dessertspoons: 'dsps',
   tablespoon: 'tbsp',
-  teaspoon: 'tsp'
+  tablespoons: 'tbsps',
+  teaspoon: 'tsp',
+  teaspoons: 'tsps'
 }
 
 /**
@@ -84,7 +89,7 @@ const Units: Dict<string> = {
  * @returns {string} - The converted unit to singular form
  */
 function toSingular(unit: string): string {
-  if (unit.endsWith('s') && Units[unit.slice(0, -1)] !== undefined) {
+  if (unit.endsWith('s') && Units[unit] === undefined) {
     return unit.slice(0, -1);
   }
   return unit;
