@@ -9,10 +9,12 @@ const Units: Dict<string> = {
   // Generic/Vague/Texture or Container Specific
   bottle: 'btl',
   bunch: 'bn',
+  bunches: 'bn',
   bushel: 'bu',
   can: 'cn',
   clove: 'cl',
   dash: 'ds',
+  dashes: 'ds',
   dozen: 'doz',
   drop: 'dp',
   each: 'ea',
@@ -21,12 +23,15 @@ const Units: Dict<string> = {
   head: 'hd',
   half: '½',
   large: 'lg',
+  loaf: 'lf',
+  loaves: 'lvs',
   medium: 'md',
   package: 'pkg',
   packet: 'pkt',
   peck: 'pk',
   piece: 'pc',
   pinch: 'pn',
+  pinches: 'pn',
   quarter: '¼',
   serving: 'serv',
   sheet: 'sh',
@@ -37,15 +42,13 @@ const Units: Dict<string> = {
   stick: 'stck',
   strip: 'stp',
 
-  // Literals (plural distinct)
-  loaf: 'lf',
-  loaves: 'lvs',
-
   // Height/Length/Depth
   centimeter: 'cm',
+  centimetre: 'cm',
   inch: 'in',
   inches: 'in',
   millimeter: 'mm',
+  millimetre: 'mm',
 
   // Weight
   gram: 'g',
@@ -58,12 +61,15 @@ const Units: Dict<string> = {
 
   // Volume/Capacity
   centiliter: 'cl',
+  centilitre: 'cl',
   cup: 'c',
   fluid: 'fl',
   // 'fluid ounce': 'fl oz', // handled by splitting and rejoining both words abbrevs
   gallon: 'gal',
   liter: 'l',
+  litre: 'l',
   milliliter: 'ml',
+  millilitre: 'ml',
   pint: 'pt',
   quart: 'qt',
 
@@ -93,7 +99,11 @@ function toSingular(unit: string): string {
 */
 function capitalFirstLetter(unit: string, abbr: string): string {
   if (unit.charAt(0) === unit.charAt(0).toUpperCase()) {
-    abbr = abbr.charAt(0).toUpperCase() + abbr.substring(1);
+    if (abbr === 'ml' || abbr === 'cl') {
+      abbr = abbr.slice(0, -1) + abbr.slice(-1).toUpperCase();
+    } else {
+      abbr = abbr.charAt(0).toUpperCase() + abbr.substring(1);
+    }
     if (abbr.split(' ').length > 1) {
       let split: string[] = abbr.split(' ');
       for (let i = 1; i < split.length; i++) {
