@@ -3,7 +3,7 @@ A npm library that converts various culinary units or terms to their respective 
 
 ## Features
 
-- Convert common & niche culinary units for Height, Length, Depth, Weight, Volume, Capacity, Size, and Spoons.
+- Convert common & niche culinary units for Height, Length, Depth, Weight, Volume, Capacity, Size, and Spoons to matching abbreviations.
 - Parses and converts the plural form of the unit to its respective abbreviation if it exists in our data.
 - Passing capitalized unit returns its respective abbreviation also capitalized (in *multi-worded strings*, only if the first word was capitalized).
 - Handles international & American spelling of units including:
