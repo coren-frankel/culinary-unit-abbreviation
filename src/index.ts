@@ -3,7 +3,7 @@ interface Dict<T> {
   [Key: string]: T;
 }
 
-/** Units/Terms */
+/** Units/Terms dictionary*/
 const Units: Dict<string> = {
   // Generic/Subjective
   bottle: 'btl',
@@ -89,6 +89,7 @@ const Units: Dict<string> = {
 
 /**
  * If the unit is plural convert it to singular form
+ * unless the unit matches a key with the trailing 's'
  * @param {string} unit - The unit we are obtaining the abbreviation of
  * @returns {string} - The converted unit to singular form
  */
@@ -101,6 +102,7 @@ function toSingular(unit: string): string {
 
 /**
 * Check if the original unit was capitalize and capitalize the first letter of the abbreviation
+* unless 'ml' or 'cl' was given -- exceptions that capitalize the last letter i.e. 'mL' or 'cL'
 * @param {string} unit - The unit we are obtaining the abbreviation of
 * @param {string} abbr - The abbreviation
 * @returns {string} - First letter capitalized of the abbreviation
