@@ -1,19 +1,18 @@
 # culinary-unit-abbreviation
 A npm library that converts various culinary units or terms to their respective abbreviations
 
-## Attention: Work In Progress...
-
-<div align='center'>
- <img src='https://github.com/coren-frankel/culinary-unit-abbreviation/assets/104476731/036f4fcb-2eab-49f0-8971-4fbaa75713f6' alt='work in progress sign'
- height=250 width=250 />
- <p>This documentation and/or it's code is incomplete at this time. Come back soon!</p>
-</div>
-
 ## Features
 
-- Convert the most common units for Height, Length, Distance, Range, Depth, Weight, Volume, Capacity, Temperature, and Speed.
+- Convert common & niche units for Height, Length, Depth, Weight, Volume, Capacity, Size, and Spoons.
 - Parses and converts the plural form of the unit to its respective abbreviation if it exists in our data.
-- Passing capitalized unit returns its respective abbreviation also capitalized.
+- Passing capitalized unit returns its respective abbreviation also capitalized (in multi-worded strings, only if the first word was capitalized).
+- Handles international & American spelling of units including:
+  * centimetre & centimeter
+  * millimetre & millimeter
+  * centilitre & centiliter
+  * millilitre & milliliter
+  * litre & liter
+- Returns a verbose string when no match exists in our data (or in multi-worded strings, if at least one word lacks a match). i.e. input: 'yellow' returns `No abbreviation found for yellow.`
 
 
 ## Prerequisites 
@@ -37,21 +36,24 @@ $ npm install culinary-unit-abbreviation
 import abbr from 'culinary-unit-abbreviation';
 
 // Convert the unit 'package' to 'pkg'
-abbr('package');
+abbr('large package');
 
 // Convert the unit 'fluid ounces' to 'fl oz'
 abbr('fluid ounces');
 
+// Convert the unit 'half dozen' to 'fl oz'
+abbr('half dozen');
+
 // Convert the unit 'Milliliter' to 'mL'
 abbr('Milliliter');
 
-// Convert the unit 'pint' to 'pt'
-abbr('pint');
+// Convert the unit 'Pounds' to 'Lbs'
+abbr('Pounds');
 ```
 
 ## Supported conversions
 
-### Generic / Subjective
+### Generic/Subjective
   * bottle(s)
   * bunch(es)
   * bushel(s)
@@ -64,24 +66,29 @@ abbr('pint');
   * filet(s)
   * handful(s)
   * head(s)
-  * half
-  * large
   * loaf/loaves
-  * medium
   * package(s)
   * packet(s)
   * peck(s)
   * piece(s)
   * pinch(es)
-  * quarter
   * serving(s)
   * sheet(s)
   * slice(s)
-  * small
   * sprig(s)
   * stalk(s)
   * stick(s)
   * strip(s)
+
+### Size
+  * large
+  * medium
+  * small
+
+### Common Fractions
+  * half
+  * quarter
+  * third
 
 ### Height/Length/Depth
   * centimeter(s)/centimetre(s)
@@ -113,7 +120,7 @@ abbr('pint');
 
 
 ## Request An Abbreviation
-Want to see another term and it's abbreviation? 
+Want to see another term and it's abbreviation? Think another abbreviation should replace another?
 [Submit an Issue](https://github.com/coren-frankel/culinary-unit-abbreviation/issues) with the term, abbreviation, and an example of the term/abbreviation as it is used in culinary arts. 
 
 ## Aknowledgments

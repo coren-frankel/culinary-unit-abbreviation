@@ -5,7 +5,7 @@ interface Dict<T> {
 
 /** Units/Terms */
 const Units: Dict<string> = {
-  // Generic/Vague/Texture or Container Specific
+  // Generic/Subjective
   bottle: 'btl',
   bunch: 'bn',
   bunches: 'bn',
