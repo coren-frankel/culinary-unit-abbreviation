@@ -20,11 +20,8 @@ const Units: Dict<string> = {
   filet: 'fil',
   handful: 'hf',
   head: 'hd',
-  half: '½',
-  large: 'lg',
   loaf: 'lf',
   loaves: 'lvs',
-  medium: 'md',
   package: 'pkg',
   packet: 'pkt',
   peck: 'pk',
@@ -32,17 +29,24 @@ const Units: Dict<string> = {
   pieces: 'pcs',
   pinch: 'pn',
   pinches: 'pn',
-  quarter: '¼',
   serving: 'serv',
   sheet: 'sh',
   slice: 'sl',
-  small: 'sm',
   sprig: 'sp',
   stalk: 'stlk',
   stick: 'stck',
   strip: 'stp',
-  third: '⅓',
 
+  // Size
+  large: 'lg',
+  medium: 'md',
+  small: 'sm',
+  
+  // Common Fractions
+  half: '½',
+  quarter: '¼',
+  third: '⅓',
+  
   // Height/Length/Depth
   centimeter: 'cm',
   centimetre: 'cm',
