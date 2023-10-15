@@ -3,9 +3,9 @@ interface Dict<T> {
   [Key: string]: T;
 }
 
-/** Units/Terms */
+/** Units/Terms dictionary*/
 const Units: Dict<string> = {
-  // Generic/Vague/Texture or Container Specific
+  // Generic/Subjective
   bottle: 'btl',
   bunch: 'bn',
   bunches: 'bn',
@@ -20,11 +20,8 @@ const Units: Dict<string> = {
   filet: 'fil',
   handful: 'hf',
   head: 'hd',
-  half: '½',
-  large: 'lg',
   loaf: 'lf',
   loaves: 'lvs',
-  medium: 'md',
   package: 'pkg',
   packet: 'pkt',
   peck: 'pk',
@@ -32,17 +29,24 @@ const Units: Dict<string> = {
   pieces: 'pcs',
   pinch: 'pn',
   pinches: 'pn',
-  quarter: '¼',
   serving: 'serv',
   sheet: 'sh',
   slice: 'sl',
-  small: 'sm',
   sprig: 'sp',
   stalk: 'stlk',
   stick: 'stck',
   strip: 'stp',
-  third: '⅓',
 
+  // Size
+  large: 'lg',
+  medium: 'md',
+  small: 'sm',
+  
+  // Common Fractions
+  half: '½',
+  quarter: '¼',
+  third: '⅓',
+  
   // Height/Length/Depth
   centimeter: 'cm',
   centimetre: 'cm',
@@ -85,6 +89,7 @@ const Units: Dict<string> = {
 
 /**
  * If the unit is plural convert it to singular form
+ * unless the unit matches a key with the trailing 's'
  * @param {string} unit - The unit we are obtaining the abbreviation of
  * @returns {string} - The converted unit to singular form
  */
@@ -97,6 +102,7 @@ function toSingular(unit: string): string {
 
 /**
 * Check if the original unit was capitalize and capitalize the first letter of the abbreviation
+* unless 'ml' or 'cl' was given -- exceptions that capitalize the last letter i.e. 'mL' or 'cL'
 * @param {string} unit - The unit we are obtaining the abbreviation of
 * @param {string} abbr - The abbreviation
 * @returns {string} - First letter capitalized of the abbreviation
