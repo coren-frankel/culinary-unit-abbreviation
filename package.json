@@ -27,9 +27,6 @@
     "url": "https://github.com/coren-frankel/culinary-unit-abbreviation/issues"
   },
   "homepage": "https://github.com/coren-frankel/culinary-unit-abbreviation#readme",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "repository": "https://github.com/coren-frankel/culinary-unit-abbreviation.git",
   "devDependencies": {
     "@types/jest": "^29.5.5",
