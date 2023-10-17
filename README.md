@@ -1,18 +1,15 @@
 # culinary-unit-abbreviation
-A npm library that converts various culinary units or terms to their respective abbreviations
+A npm library that converts various culinary units or terms to their respective abbreviations, in TypeScript & JavaScript.
 
 ## Features
 
 - Convert common & niche culinary units for Height, Length, Depth, Weight, Volume, Capacity, Size, and Spoons to matching abbreviations.
 - Parses and converts the plural form of the unit to its respective abbreviation if it exists in our data.
 - Passing capitalized unit returns its respective abbreviation also capitalized (in *multi-worded strings*, only if the first word was capitalized).
-- Handles international & American spelling of units including:
+- Handles international & American spelling of units like (non-exclusive):
   * centimetre & centimeter
-  * millimetre & millimeter
-  * centilitre & centiliter
-  * millilitre & milliliter
   * litre & liter
-- Returns a verbose string when no match exists in our data (or in multi-worded strings, if at least one word lacks a match). i.e. input: 'yellow' returns: `No abbreviation found for yellow.`
+- Returns a verbose string when no match exists in our data (or in *multi-worded strings*, if at least one word lacks a match). i.e. input: 'yellow' returns: `No abbreviation found for yellow.`
 
 
 ## Prerequisites 
@@ -38,8 +35,8 @@ import abbr from 'culinary-unit-abbreviation'; // as ES module
 // Convert the unit 'tablespoons' to 'tbsps'
 abbr('tablespoons');
 
-// Convert the unit 'large package' to 'lg pkg'
-abbr('large package');
+// Convert the unit 'large clove' to 'lg cl'
+abbr('large clove');
 
 // Convert the unit 'fluid ounces' to 'fl oz'
 abbr('fluid ounces');
@@ -51,8 +48,8 @@ const abbr = require('culinary-unit-abbreviation'); // as CommonJS script
 // Convert the unit 'half dozen' to '½ doz'
 abbr('half dozen');
 
-// Convert the unit 'Milliliter' to 'mL'
-abbr('Milliliter');
+// Convert the unit 'Millilitre' to 'mL'
+abbr('Millilitre');
 
 // Convert the unit 'Pounds' to 'Lbs'
 abbr('Pounds');
