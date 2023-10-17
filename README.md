@@ -1,6 +1,9 @@
 # culinary-unit-abbreviation
 A npm library that converts various culinary units or terms to their respective abbreviations, in TypeScript & JavaScript.
 
+
+[![published npm version](https://img.shields.io/npm/v/culinary-unit-abbreviation)](https://www.npmjs.com/package/culinary-unit-abbreviation) [![test coverage](https://img.shields.io/codecov/c/gh/coren-frankel/culinary-unit-abbreviation)](https://codecov.io/gh/coren-frankel/culinary-unit-abbreviation) [![npm monthly downloads](https://img.shields.io/npm/dm/culinary-unit-abbreviation)](https://www.npmjs.com/package/culinary-unit-abbreviation) [![type definitions](https://img.shields.io/npm/types/culinary-unit-abbreviation)](https://www.npmjs.com/package/culinary-unit-abbreviation) [![license](https://img.shields.io/npm/l/culinary-unit-abbreviation)](https://www.npmjs.com/package/culinary-unit-abbreviation)
+
 ## Features
 
 - Convert common & niche culinary units for Height, Length, Depth, Weight, Volume, Capacity, Size, and Spoons to matching abbreviations.
@@ -128,8 +131,8 @@ Want to see another unit or measurement term and it's abbreviation? Think anothe
 [Submit an Issue](https://github.com/coren-frankel/culinary-unit-abbreviation/issues) with the term, abbreviation, and an example of the term/abbreviation as it is used in culinary arts. 
 
 ## Aknowledgments
-Dimitar Dimitrov - https://github.com/cranzy/unit-abbreviation - project & README boilerplate
-Basarat Ali Syed - That TypeScript Guy - 'TypeScript for Professionals - 2023 Edition' inspiration
+Dimitar Dimitrov - [unit-abbreviation](https://github.com/cranzy/unit-abbreviation) - library structure & README boilerplate inspiration
+Basarat Ali Syed - "That TypeScript Guy" - [TypeScript for Professionals - 2023 Edition](https://www.udemy.com/course/typescript-for-professionals/) Udemy course
 
 ## License
 MIT
