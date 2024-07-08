@@ -1,97 +1,10 @@
-/** Interface w/ Generic for custom dictionary of units */
-interface Dict<T> {
-  [Key: string]: T;
-}
-
-/** Units/Terms dictionary*/
-const Units: Dict<string> = {
-  // Generic/Subjective
-  bottle: 'btl',
-  bunch: 'bn',
-  bunches: 'bn',
-  bushel: 'bu',
-  can: 'cn',
-  clove: 'cl',
-  dash: 'ds',
-  dashes: 'ds',
-  dozen: 'doz',
-  drop: 'dp',
-  each: 'ea',
-  filet: 'fil',
-  handful: 'hf',
-  head: 'hd',
-  loaf: 'lf',
-  loaves: 'lvs',
-  package: 'pkg',
-  packet: 'pkt',
-  peck: 'pk',
-  piece: 'pc',
-  pieces: 'pcs',
-  pinch: 'pn',
-  pinches: 'pn',
-  serving: 'serv',
-  sheet: 'sh',
-  slice: 'sl',
-  sprig: 'sp',
-  stalk: 'stlk',
-  stick: 'stck',
-  strip: 'stp',
-
-  // Size
-  large: 'lg',
-  medium: 'md',
-  small: 'sm',
-  
-  // Common Fractions
-  half: '½',
-  quarter: '¼',
-  third: '⅓',
-  
-  // Height/Length/Depth
-  centimeter: 'cm',
-  centimetre: 'cm',
-  inch: 'in',
-  inches: 'in',
-  millimeter: 'mm',
-  millimetre: 'mm',
-
-  // Weight
-  gram: 'g',
-  kilogram: 'kg',
-  microgram: 'µg',
-  milligram: 'mg',
-  ounce: 'oz',
-  pound: 'lb',
-  pounds: 'lbs',
-
-  // Volume/Capacity
-  centiliter: 'cl',
-  centilitre: 'cl',
-  cup: 'c',
-  fluid: 'fl',
-  gallon: 'gal',
-  liter: 'l',
-  litre: 'l',
-  milliliter: 'ml',
-  millilitre: 'ml',
-  pint: 'pt',
-  quart: 'qt',
-  quarts: 'qts',
-
-  // Spoon Size
-  dessertspoon: 'dsp',
-  dessertspoons: 'dsps',
-  tablespoon: 'tbsp',
-  tablespoons: 'tbsps',
-  teaspoon: 'tsp',
-  teaspoons: 'tsps'
-}
+import { Units } from './units';
 
 /**
  * If the unit is plural convert it to singular form
  * unless the unit matches a key with the trailing 's'
  * @param {string} unit - The unit we are obtaining the abbreviation of
- * @returns {string} - The converted unit to singular form
+ * @returns {string} The converted unit to singular form
  */
 function toSingular(unit: string): string {
   if (unit.endsWith('s') && Units[unit] === undefined) {
@@ -105,7 +18,7 @@ function toSingular(unit: string): string {
 * unless 'ml' or 'cl' was given -- exceptions that capitalize the last letter i.e. 'mL' or 'cL'
 * @param {string} unit - The unit we are obtaining the abbreviation of
 * @param {string} abbr - The abbreviation
-* @returns {string} - First letter capitalized of the abbreviation
+* @returns {string} First letter capitalized of the abbreviation
 */
 function capitalFirstLetter(unit: string, abbr: string): string {
   if (unit.charAt(0) === unit.charAt(0).toUpperCase()) {
@@ -114,8 +27,8 @@ function capitalFirstLetter(unit: string, abbr: string): string {
     } else {
       abbr = abbr.charAt(0).toUpperCase() + abbr.substring(1);
     }
-    if (abbr.split(' ').length > 1) {
-      let split: string[] = abbr.split(' ');
+    let split: string[] = abbr.split(' ');
+    if (split.length > 1) {
       for (let i = 1; i < split.length; i++) {
         split[i] = split[i][0].toUpperCase() + split[i].substring(1);
       }
@@ -128,20 +41,23 @@ function capitalFirstLetter(unit: string, abbr: string): string {
 /**
 * Tries to retrieve the abbreviation
 * @param {string} unit - The unit we are retrieving the abbr. for
-* @returns {string} - The abbreviation for the given unit
+* @returns {string} The matching abbreviated unit string
 */
 function getAbbr(unit: string): string {
-  let abbr: string = Units[unit.toLowerCase()];
-  let split: string[] = unit.toLowerCase().split(' ');
-  if (typeof abbr === 'undefined') {
+  let lowerUnit: string = unit.toLowerCase();
+  let abbr: string | undefined = Units[lowerUnit];
+  let split: string[] = lowerUnit.split(' ');
+  let sameCaseSplit: string[] = unit.split(' ');
+  if (abbr === undefined) {
     if (split.length > 1) {
-      let split: string[] = unit.toLowerCase().split(' ');
-      abbr = Units[toSingular(split[0])];
-      for (let i = 1; i < split.length; i++) {
-        abbr += ' ' + Units[toSingular(split[i])];
+      abbr = Units[toSingular(split[0])] ?? sameCaseSplit[0];
+      let i = 1;
+      while (i < split.length) {
+        abbr += ' ' + (Units[toSingular(split[i])] ?? sameCaseSplit[i]);
+        i++;
       }
     } else {
-      abbr = Units[toSingular(unit.toLowerCase())];
+      abbr = Units[toSingular(lowerUnit)] ?? unit;
     }
   }
   return abbr;
@@ -150,14 +66,11 @@ function getAbbr(unit: string): string {
 /**
 * The public abbreviation conversion method
 * @param {string} unit - The unit we are obtaining the abbreviation of
-* @returns {string} - The abbreviation of the unit if it exists in our Units data
+* @returns {string} The abbreviation of the unit if it exists in our Units data
 */
 export default function toAbbreviation(unit: string): string {
   let abbr = getAbbr(unit);
-  if (typeof abbr !== 'undefined' && !abbr.toLowerCase().includes('undefined')) {
-      return capitalFirstLetter(unit, abbr);
-  }
-  return `No abbreviation found for ${unit}.`;
+  return capitalFirstLetter(unit, abbr);
 }
 
 module.exports = toAbbreviation;

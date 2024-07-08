@@ -1,11 +1,18 @@
 import abbr from '../src/index';
 
 describe('index', () => {
-  it('should return descriptive string when unit parameter doesn\'t exist in Units dictionary', () => {
-    expect(abbr('bacon').match('No abbreviation found for bacon'));
+  it('should return input string when match doesn\'t exist in Units dictionary', () => {
+    expect(abbr('bacon').match('bacon'));
   });
-  it('should return descriptive string when multi-word unit parameter doesn\'t find matches for all words', () => {
-    expect(abbr('Large White Gloves')).toMatch('No abbreviation found for Large White Gloves');
+  it('should return input string when multi-word unit doesn\'t find matches for all words', () => {
+    expect(abbr('Long White Gloves')).toMatch('Long White Gloves');
+  });
+  it('should return as many abbreviated units as possible in a string', () => {
+    expect(abbr('One Dozen Large Eggs')).toMatch('One Doz Lg Eggs');
+  });
+  it('should return original string if no match', () => {
+    expect(abbr('samples')).toMatch('samples');
+    expect(abbr('Morsels')).toMatch('Morsels');
   });
   it('should not return erroneous strings', () => {
     expect(abbr('bunch')).not.toMatch('pillow');
