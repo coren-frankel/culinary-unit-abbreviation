@@ -1,6 +1,6 @@
 {
   "name": "culinary-unit-abbreviation",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "This package converts culinary unit or measurement terms to common abbreviations",
   "main": "lib",
   "types": "lib",
