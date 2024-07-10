@@ -1,7 +1,7 @@
 /**
-* The public abbreviation conversion method
-* @param {string} unit - The unit we are obtaining the abbreviation of
-* @returns {string} - The abbreviation of the unit if it exists in our Units data
+* Tries to retrieve the abbreviation
+* @param {string} unit - The unit we are retrieving the abbr. for
+* @returns {string} The matching abbreviated unit string
 */
-export default function toAbbreviation(unit: string): string;
+export default function getAbbr(unit: string): string;
 //# sourceMappingURL=index.d.ts.map

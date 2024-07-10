@@ -1,23 +1,30 @@
 # culinary-unit-abbreviation
-A npm library that converts various culinary units or terms to their respective abbreviations, in TypeScript & JavaScript.
+A package that converts various culinary unit or term strings to their respective abbreviated strings, in TypeScript & JavaScript.
 
 
 [![published npm version](https://img.shields.io/npm/v/culinary-unit-abbreviation)](https://www.npmjs.com/package/culinary-unit-abbreviation) [![codecov](https://codecov.io/gh/coren-frankel/culinary-unit-abbreviation/graph/badge.svg?token=EDSMT8ZK96)](https://codecov.io/gh/coren-frankel/culinary-unit-abbreviation) [![npm monthly downloads](https://img.shields.io/npm/dm/culinary-unit-abbreviation)](https://www.npmjs.com/package/culinary-unit-abbreviation) [![type definitions](https://img.shields.io/npm/types/culinary-unit-abbreviation)](https://www.npmjs.com/package/culinary-unit-abbreviation) [![license](https://img.shields.io/npm/l/culinary-unit-abbreviation)](https://www.npmjs.com/package/culinary-unit-abbreviation)
 
 ## Features
 
-- Convert common & niche culinary units for Height, Length, Depth, Weight, Volume, Capacity, Size, and Spoons to matching abbreviations.
-- Parses and converts the plural form of the unit to its respective abbreviation if it exists in our data.
-- Passing capitalized unit returns its respective abbreviation also capitalized (in *multi-worded strings*, only if the first word was capitalized).
-- Handles international & American spelling of units like (non-exclusive):
+- Convert common (and niche) culinary units for Height, Length, Depth, Weight, Volume, Capacity, Size, and Spoons to matching abbreviations.
+- Parses and converts the plural form of a unit string to its respective abbreviation, if it exists in our data.
+- Handles American & British English spelling of units including (non-exclusive):
   * centimetre & centimeter
   * litre & liter
-- Returns a verbose string when no match exists in our data (or in *multi-worded strings*, if at least one word lacks a match). i.e. input: 'yellow' returns: `No abbreviation found for yellow.`
+- Modifies the input string, returning any matched words abbreviated and all else preserved.
 
+### Removed
+- ~~Passing capitalized unit returns its respective abbreviation also capitalized (in *multi-worded strings*, only if the first word was capitalized).~~ Inconsistent with preserved string logic.
+
+### Coming Soon...
+- Optional parameters for customization (i.e. custom units)
+
+### Is Something Missing?
+[Create an issue](https://github.com/coren-frankel/culinary-unit-abbreviation/issues/new) to share what would make this library more useful.
 
 ## Prerequisites 
 
-You need npm installed.
+You need `npm` installed (or another package manager; instructions follow for npm).
 ```bash
 $ npm install npm@latest -g
 ```
@@ -51,10 +58,10 @@ const abbr = require('culinary-unit-abbreviation'); // as CommonJS script
 // Convert the unit 'half dozen' to '½ doz'
 abbr('half dozen');
 
-// Convert the unit 'Millilitre' to 'mL'
+// Convert the unit 'Millilitre' to 'ml'
 abbr('Millilitre');
 
-// Convert the unit 'Pounds' to 'Lbs'
+// Convert the unit 'Pounds' to 'lbs'
 abbr('Pounds');
 ```
 
@@ -131,8 +138,7 @@ Want to see another unit or measurement term and it's abbreviation? Think anothe
 [Submit an Issue](https://github.com/coren-frankel/culinary-unit-abbreviation/issues) with the term, abbreviation, and an example of the term/abbreviation as it is used in culinary arts. 
 
 ## Aknowledgments
-Dimitar Dimitrov - [unit-abbreviation](https://github.com/cranzy/unit-abbreviation) - library structure & README boilerplate inspiration
-Basarat Ali Syed - "That TypeScript Guy" - [TypeScript for Professionals - 2023 Edition](https://www.udemy.com/course/typescript-for-professionals/) Udemy course
+Dimitar Dimitrov - [unit-abbreviation](https://github.com/cranzy/unit-abbreviation) - library boilerplate
 
 ## License
 MIT

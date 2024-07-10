@@ -8,7 +8,7 @@ describe('index', () => {
     expect(abbr('Long White Gloves')).toMatch('Long White Gloves');
   });
   it('should return as many abbreviated units as possible in a string', () => {
-    expect(abbr('One Dozen Large Eggs')).toMatch('One Doz Lg Eggs');
+    expect(abbr('One Dozen Large Eggs')).toMatch('One doz lg Eggs');
   });
   it('should return original string if no match', () => {
     expect(abbr('samples')).toMatch('samples');
@@ -57,13 +57,13 @@ describe('index', () => {
     expect(abbr('pounds')).toMatch('lbs');
   });
   it('should return appropriately capitalized abbreviation for single word strings', () => {
-    expect(abbr('Milliliter')).toMatch('mL');
+    expect(abbr('Milliliter')).toMatch('ml');
     expect(abbr('milliliter')).toMatch('ml');
-    expect(abbr('Centiliter')).toMatch('cL');
+    expect(abbr('Centiliter')).toMatch('cl');
     expect(abbr('centiliter')).toMatch('cl');
-    expect(abbr('Pounds')).toMatch('Lbs');
+    expect(abbr('Pounds')).toMatch('lbs');
     expect(abbr('grams')).toMatch('g');
-    expect(abbr('Tablespoons')).toMatch('Tbsps');
+    expect(abbr('Tablespoons')).toMatch('tbsps');
   });
   it('should return corresponding abbreviation for multiple words in a string', () => {
     expect(abbr('fluid ounce')).toMatch('fl oz');
@@ -73,8 +73,8 @@ describe('index', () => {
     expect(abbr('large package')).toMatch('lg pkg');
   });
   it('should return corresponding abbreviation for multiple words in a string matching capitalization if first word capitalized', () => {
-    expect(abbr('Small Cloves')).toMatch('Sm Cl');
-    expect(abbr('Medium head')).toMatch('Md Hd');
+    expect(abbr('Small Cloves')).toMatch('sm cl');
+    expect(abbr('Medium head')).toMatch('md hd');
     expect(abbr('quarter Can')).toMatch('¼ cn');
   });
 });
