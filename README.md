@@ -1,5 +1,5 @@
 # culinary-unit-abbreviation
-A package that converts various culinary unit or term strings to their respective abbreviated strings, in TypeScript & JavaScript.
+TypeScript & JavaScript package that converts various English language culinary units or terms to their respective abbreviations. The package was built to augment recipe, cooking, baking, and mixology-oriented applications.
 
 
 [![published npm version](https://img.shields.io/npm/v/culinary-unit-abbreviation)](https://www.npmjs.com/package/culinary-unit-abbreviation) [![codecov](https://codecov.io/gh/coren-frankel/culinary-unit-abbreviation/graph/badge.svg?token=EDSMT8ZK96)](https://codecov.io/gh/coren-frankel/culinary-unit-abbreviation) [![npm monthly downloads](https://img.shields.io/npm/dm/culinary-unit-abbreviation)](https://www.npmjs.com/package/culinary-unit-abbreviation) [![type definitions](https://img.shields.io/npm/types/culinary-unit-abbreviation)](https://www.npmjs.com/package/culinary-unit-abbreviation) [![license](https://img.shields.io/npm/l/culinary-unit-abbreviation)](https://www.npmjs.com/package/culinary-unit-abbreviation)
